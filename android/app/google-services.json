@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "849044211311",
+    "project_id": "shopsmart-78edb",
+    "storage_bucket": "shopsmart-78edb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849044211311:android:f1dff60cb7130c6525ef9a",
+        "android_client_info": {
+          "package_name": "com.example.tiklaal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849044211311-qnp4giivlghjur2a34set4tki713c0hc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNEMvlDvg6FSeT9LPEwxk4a5ndHWrcLOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849044211311-qnp4giivlghjur2a34set4tki713c0hc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
