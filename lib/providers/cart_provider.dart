@@ -1,19 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:tiklaal/models/cart_model.dart';
+import 'package:tiklaal/models/product_model.dart';
 import 'package:tiklaal/providers/products_provider.dart';
 import 'package:uuid/uuid.dart';
 
 class CartProvider with ChangeNotifier {
-  final Map<String, CartModel> _cartItems = {};
+  final Map<String, CartModel> _cartItems = {}; // this list
+  final List<ProductModel> myOrderList = [];
   Map<String, CartModel> get getCartitems {
     return _cartItems;
   }
 
+  /// Custom code starts
+  List<CartModel> get getCartItemsList {
+    return _cartItems.values.toList();
+  }
+
+  addProductModelToMyOrderList({required ProductModel productModel}) {
+    myOrderList.add(productModel);
+    _cartItems.remove(productModel.productId);
+    notifyListeners();
+  }
+
+  /// Custom code ends
+
   void addProductToCart({required String productId}) {
     _cartItems.putIfAbsent(
       productId,
-      () => CartModel(
-          cartId: const Uuid().v4(), productId: productId, quantity: 1),
+      () => CartModel(cartId: const Uuid().v4(), productId: productId, quantity: 1),
     );
     notifyListeners();
   }

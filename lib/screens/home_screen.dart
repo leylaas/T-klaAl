@@ -51,8 +51,7 @@ class HomeScreen extends StatelessWidget {
                     itemCount: AppConstants.bannersImages.length,
                     pagination: const SwiperPagination(
                       // alignment: Alignment.center,
-                      builder: DotSwiperPaginationBuilder(
-                          activeColor: Colors.red, color: Colors.white),
+                      builder: DotSwiperPaginationBuilder(activeColor: Colors.red, color: Colors.white),
                     ),
                   ),
                 ),
@@ -70,9 +69,7 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return ChangeNotifierProvider.value(
-                          value: productsProvider.getProducts[index],
-                          child: const LatestArrivalProductsWidget());
+                      return ChangeNotifierProvider.value(value: productsProvider.getProducts[index], child: const LatestArrivalProductsWidget());
                     }),
               ),
               const TitlesTextWidget(label: "Kategoriler"),
@@ -83,8 +80,7 @@ class HomeScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 4,
-                children:
-                    List.generate(AppConstants.categoriesList.length, (index) {
+                children: List.generate(AppConstants.categoriesList.length, (index) {
                   return CategoryRoundedWidget(
                     image: AppConstants.categoriesList[index].image,
                     name: AppConstants.categoriesList[index].name,
