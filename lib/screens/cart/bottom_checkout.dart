@@ -1,6 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tiklaal/models/cart_model.dart';
+import 'package:tiklaal/services/firebase_service.dart';
 import 'package:tiklaal/widgets/subtitle_text.dart';
 import 'package:tiklaal/widgets/title_text.dart';
 
@@ -52,6 +54,9 @@ class CartBottomSheetWidget extends StatelessWidget {
                     Provider.of<CartProvider>(context, listen: false).addProductModelToMyOrderList(
                       productModel: getCurrProduct!,
                     );
+
+                    // Firebase
+                    FirebaseService.instance.saveProduct(getCurrProduct);
                   }
                 },
                 child: const Text("Ödeme Yap"),
